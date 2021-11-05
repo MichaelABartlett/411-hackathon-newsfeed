@@ -1,22 +1,36 @@
-import logo from './logo.svg';
+import {useEffect, useState} from 'react';
+
 import './App.css';
 
+
+const API_URL = "https://hn.algolia.com/api"
+
+
+
 function App() {
+  const [stories, setStories] = useState([])
+
+  useEffect(() => {
+    console.log("It did mount")
+    // use fetch API
+    fetch(API_URL).then((response) => response.json())
+    .then((data) => setStories(data.results));
+  }, [])
+
+
+  // this is just to make sure contacts are set in state
+  useEffect(() => {
+    console.log('It updated');
+    console.log(stories)
+    // Use fetch API
+  }, [stories]);
+
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        soon to be News Feed app
       </header>
     </div>
   );
