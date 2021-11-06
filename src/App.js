@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import Nav from "./components/Nav/Nav";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <Dashboard stories={stories} />
     </div>
   );
 }
