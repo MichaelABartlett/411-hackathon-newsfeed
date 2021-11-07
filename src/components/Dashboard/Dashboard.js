@@ -1,10 +1,14 @@
 import React from 'react';
 import './Dashboard.css'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     return (
         <div>
-            <h1>Dashboard</h1>
+            {props.stories.map((story) => {
+                return(
+                <li>{story.title}</li>
+                )
+            })}
         </div>
     );
 };
