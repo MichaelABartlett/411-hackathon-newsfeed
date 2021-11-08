@@ -1,11 +1,18 @@
 import React from 'react';
 import './Dashboard.css'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+    
+
+
+
     return (
-        <div>
+
+        <li style={{ listStyle: "none"}}>
             <h1>Dashboard</h1>
-        </div>
+            <h5>{props.story}</h5>
+            <h5>{props.url}</h5>
+        </li>
     );
 };
 
