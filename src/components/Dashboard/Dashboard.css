@@ -1,0 +1,11 @@
+.list {
+    margin-left: 5px;
+    list-style: none;
+    text-align: left;
+}
+
+
+#url {
+    font-size: 15px;
+    font-weight: 500;
+}
