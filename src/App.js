@@ -5,9 +5,6 @@ import Dashboard from "./components/Dashboard/Dashboard";
 
 import './App.css';
 
-
-
-
 const API_URL = "https://hn.algolia.com/api/v1/search?tags=front_page"
 
 function App() {
@@ -28,17 +25,15 @@ function App() {
   }, [stories]);
 
 
-
   return (
     <div className="App">
       <Nav />
       <ul>{stories.map((stories, index) => {
         return (
-          <Dashboard key={index} story={stories.title} author={stories.arthor} story_url={stories.url}/>
+          <Dashboard key={index} story={stories.title} author={stories.author} story_url={stories.url}points={stories.points} time={stories.created_at} comments={stories.num_comments}/>
         )
       })}
       </ul>
-      
     </div>
   );
 }

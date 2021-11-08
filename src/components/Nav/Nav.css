@@ -13,18 +13,18 @@
     padding-bottom: 10px;
     margin-top: 10px;
     background-color: orangered;
-    border: 5px solid green;
+    /* border: 5px solid green; */
 }
 #nav-select {
     padding: 0;
     margin-left: 0;
-    border: 5px solid black;
+    /* border: 5px solid black; */
 }
 
 
 #filter-for {
     margin-left: 5px;
-    border: 5px solid black;
+    /* border: 5px solid black; */
 }
 
 
@@ -33,7 +33,7 @@
     padding: 0;
     margin: auto;
     margin-left: 10px;
-    border: 5px solid blue;
+    /* border: 5px solid blue; */
 }
 
 form {
@@ -41,7 +41,7 @@ form {
     margin-left: 1px;
     width: 100%;
     height: 75px;
-    border: 5px solid yellow;
+    /* border: 5px solid yellow; */
 }
 
 #searchbar {
@@ -52,7 +52,7 @@ form {
     padding: 5px;
     
     outline: none;
-    border: 5px solid black;
+    /* border: 5px solid black; */
 }
 
 #searchbutton {
@@ -63,6 +63,6 @@ form {
     width: 10%;
     border-radius: 0;
     background-color: cadetblue;
-    border: 5px solid tan;
+    /* border: 5px solid tan; */
 }
 
