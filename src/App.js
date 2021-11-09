@@ -28,12 +28,9 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <ul>{stories.map((stories, index) => {
-        return (
-          <Dashboard key={index} story={stories.title} author={stories.author} story_url={stories.url}points={stories.points} time={stories.created_at} comments={stories.num_comments}/>
-        )
-      })}
-      </ul>
+      <ol>
+          <Dashboard stories={stories} />
+      </ol>
     </div>
   );
 }

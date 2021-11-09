@@ -4,12 +4,14 @@ import './Dashboard.css'
 const Dashboard = (props) => {
     
     return (
-
-        <li className="list">
-            <h3>{props.story}<span id={"url"}>{` URL:${props.story_url}`}</span></h3>
-            <p>{`${props.points} | ${props.author} | ${props.time} | ${props.comments} comments`}</p>
-        </li>
-    );
-};
+        props.stories.map((story, index) => {
+            return (
+                <li className="list">
+                    <h3>{story.title}<a href={story.url} id={"url"}>{` (${story.url})`}</a></h3>
+                    <p>{`${story.points} points | ${story.author} | ${story.time} | ${story.comments} comments`}</p>
+                </li>
+            )
+        }))
+}
 
 export default Dashboard;
