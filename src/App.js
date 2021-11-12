@@ -15,6 +15,8 @@ function App() {
     // use fetch API
     fetch(API_URL).then((response) => response.json())
     .then((data) => setStories(data.hits));
+
+    console.log('This line is the best line of code I have ever written.')
   }, [])
 
 
