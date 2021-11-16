@@ -12,6 +12,8 @@ function App() {
   const [stories, setStories] = useState([])
   const [filterTerm, setFilterTerm] = useState()
   const [lockedTerm, setLockedTerm] = useState()
+  const [searchTerm, setSearchTerm] = useState('title')
+
   
 
   useEffect(() => {
@@ -22,29 +24,36 @@ function App() {
 
   }, [])
 
+  useEffect(() => {
+    console.log("search term: " + searchTerm);
+  }, [searchTerm]);
+  
+
+  useEffect(() => {
+    console.log("locked term: " + lockedTerm);
+  }, [lockedTerm]);
+ 
+  let searchChange = (e) => {
+    
+    setSearchTerm(e.target.value);
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
     setFilterTerm(filterTerm)
     setLockedTerm(filterTerm)
     setFilterTerm("")
-}
-
-useEffect(() => {
-  console.log("locked term in Nav: " + lockedTerm);
-}, [lockedTerm]);
- 
-  
-
+  }
  
   useEffect(() => {
     console.log(stories)
+
   }, [stories]);
 
   function filterSearch(term) {
     return (item) => {
       return (
-        item.title.toLowerCase().includes(term.toLowerCase())
+        item[searchTerm].toString().toLowerCase().includes(term.toLowerCase())
       )
     }
   }
@@ -54,10 +63,10 @@ useEffect(() => {
       <div id={"nav-grid"}>
                   <h2 id={"title"}>Hacker News Feed</h2>
                   <form onSubmit={handleSubmit} >
-                  <select id={"nav-select"}>
-                          <option value={"blanks"}>Story Name</option>
-                          <option value={"blanks2"}>Author</option>
-                          <option value={"blanks3"}>Number of Comments</option>
+                  <select id={"nav-select"} onChange={searchChange}>
+                          <option value={"title"}>Story Name</option>
+                          <option value={"author"}>Author</option>
+                          <option value={"num_comments"}>Number of Comments</option>
                       </select>
                       <select id={"filter-for"}>
                           <option value={"blanks4"}>Filter by Time</option>
